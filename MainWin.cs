@@ -21,7 +21,7 @@ using Microsoft.Win32;
  * 
  * ----------------------------------------------------------------------------
  * 
- * Revised: yyyy-mm-dd - xxxx.
+ * Revised: 2022-03-24 - Reset search position when loading a new save file.
  * 
  */
 namespace LoX_Editor
@@ -153,6 +153,7 @@ namespace LoX_Editor
                 curSaveUnpFn = Unzip(curSaveFn, true);
                 tbGameXML.Text = File.ReadAllText(curSaveUnpFn);
                 saveChanged = false;
+                searchPos = 0;
                 tsbSave.Enabled = true;
             }
             catch (Exception ex)
