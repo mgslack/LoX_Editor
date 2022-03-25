@@ -96,7 +96,8 @@ namespace LoX_Editor
             // 
             this.tstbSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tstbSearch.Name = "tstbSearch";
-            this.tstbSearch.Size = new System.Drawing.Size(100, 25);
+            this.tstbSearch.Size = new System.Drawing.Size(150, 25);
+            this.tstbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TstbSearch_KeyDown);
             this.tstbSearch.TextChanged += new System.EventHandler(this.TstbSearch_TextChanged);
             // 
             // tsbSearch

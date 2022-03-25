@@ -22,6 +22,8 @@ using Microsoft.Win32;
  * ----------------------------------------------------------------------------
  * 
  * Revised: 2022-03-24 - Reset search position when loading a new save file.
+ *          2022-03-25 - Minor tweaks, allow for enter from search box and
+ *                       prompt on save if no changes.
  * 
  */
 namespace LoX_Editor
@@ -337,7 +339,11 @@ namespace LoX_Editor
 
         private void TsbSave_Click(object sender, EventArgs e)
         {
-            SaveSaveFile();
+            DialogResult res = DialogResult.Yes;
+            if (!saveChanged)
+                res = MessageBox.Show(this, "You haven't modified the file, are you sure you want to save?",
+                    this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes) SaveSaveFile();
         }
 
         private void TsbAbout_Click(object sender, EventArgs e)
@@ -395,6 +401,17 @@ namespace LoX_Editor
         private void TstbSearch_TextChanged(object sender, EventArgs e)
         {
             searchPos = 0; // reset search position
+        }
+
+        private void TstbSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                TsbSearch_Click(this, new EventArgs());
+                _ = tbGameXML.Focus();
+            }
         }
         #endregion
     }
