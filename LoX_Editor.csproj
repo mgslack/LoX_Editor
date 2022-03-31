@@ -58,16 +58,26 @@
     <Compile Include="AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditCharDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditCharDlg.Designer.cs">
+      <DependentUpon>EditCharDlg.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainWin.Designer.cs">
       <DependentUpon>MainWin.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProcessXML.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCharDlg.resx">
+      <DependentUpon>EditCharDlg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWin.resx">
       <DependentUpon>MainWin.cs</DependentUpon>

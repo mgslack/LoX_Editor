@@ -24,6 +24,9 @@ using Microsoft.Win32;
  * Revised: 2022-03-24 - Reset search position when loading a new save file.
  *          2022-03-25 - Minor tweaks, allow for enter from search box and
  *                       prompt on save if no changes.
+ *          2022-03-31 - Added simple character edit dialog to view/edit
+ *                       the saved characters through instead of via the raw
+ *                       XML.
  * 
  */
 namespace LoX_Editor
@@ -412,6 +415,20 @@ namespace LoX_Editor
                 TsbSearch_Click(this, new EventArgs());
                 _ = tbGameXML.Focus();
             }
+        }
+
+        private void TsbEditDlg_Click(object sender, EventArgs e)
+        {
+            EditCharDlg dlg = new EditCharDlg();
+
+            dlg.SaveGameXML = tbGameXML.Text;
+            DialogResult res = dlg.ShowDialog(this);
+            if (res == DialogResult.OK)
+            {
+                tbGameXML.Text = dlg.SaveGameXML;
+                searchPos = 0;
+            }
+            dlg.Dispose();
         }
         #endregion
     }

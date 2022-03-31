@@ -43,6 +43,8 @@ namespace LoX_Editor
             this.label1 = new System.Windows.Forms.Label();
             this.lblSaveFn = new System.Windows.Forms.Label();
             this.tbGameXML = new System.Windows.Forms.TextBox();
+            this.tsbEditDlg = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsLoX.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +56,8 @@ namespace LoX_Editor
             this.toolStripLabel1,
             this.tstbSearch,
             this.tsbSearch,
+            this.tsbEditDlg,
+            this.toolStripSeparator1,
             this.tsbAbout,
             this.tsbHelp,
             this.tsbExit});
@@ -182,6 +186,22 @@ namespace LoX_Editor
             this.tbGameXML.WordWrap = false;
             this.tbGameXML.TextChanged += new System.EventHandler(this.TbGameXML_TextChanged);
             // 
+            // tsbEditDlg
+            // 
+            this.tsbEditDlg.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbEditDlg.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditDlg.Image")));
+            this.tsbEditDlg.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEditDlg.Name = "tsbEditDlg";
+            this.tsbEditDlg.Size = new System.Drawing.Size(23, 22);
+            this.tsbEditDlg.Text = "Edit Chars";
+            this.tsbEditDlg.ToolTipText = "Edit Characters Using Dialog";
+            this.tsbEditDlg.Click += new System.EventHandler(this.TsbEditDlg_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
             // MainWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,6 +241,8 @@ namespace LoX_Editor
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripTextBox tstbSearch;
         private System.Windows.Forms.ToolStripButton tsbSearch;
+        private System.Windows.Forms.ToolStripButton tsbEditDlg;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 

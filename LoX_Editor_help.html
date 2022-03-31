@@ -16,9 +16,22 @@
        in the XML file.  The search always starts are the top and will reset to the top if the search text
        is changed.  The search button does a search first/next depending on if the text searching on has
        been searched before or not.  Once the file has been searched, the search will reset back to the top
-       if searched one more time.  Suggested strings to look for: "Gold", Gaulen, DevelopmentPoints.</p>
-	<p>In the future, will have a feature to open up character edit dialogs with common attributes/fields
-       to edit for each character rather than just the raw XML save file.</p>
+       if searched one more time.  Suggested strings to look for: "Gold", Gaulen, DevelopmentPoints, your
+       characters names.</p>
+	<p>Standard mode for the editor is raw XML editing.  The editor also features an 'edit chars' button,
+       which will open a dialog that will allow editing of some of the character attributes.  The dialog
+       opens with Gaulen, and has 'next' and 'prev' buttons to view/edit the next or previous character.
+       The dialog allows one to edit the character name (except for Gaulen), the resistances, attributes,
+       HP and MP bonuses, number of times killed, experience and development points.  There are maximum
+       values, but are set way high for each field.  Most of these fields can be increased in game by
+       various actions and so you'll need to make sure there is the ability to grow naturally versus
+       setting values to the uppper maximum.  Generally, you'll not want to edit resistances higher
+       than 60, attributes around 60 also.  HP and MP bonus should be left under 500, times killed, under
+       100.  Experience is given so you can balance your characters, but should not really be pushed
+       above 100000 with the editor.  Development points are capped in the game and anything over 75
+       will be lost (game rolls them to zero around 85 or so).  When done editing the characters, select
+       the 'save' button.  The XML is rebuilt and displayed with the updated values in the xml text
+       box.</p>
     <div style="font-weight:bold;">Game Options:</div>
     <p>There are no real options to set or configure for the LoX editor.  The program does save off
 	   the main window position and size when exiting the program and saves the directory last loaded
