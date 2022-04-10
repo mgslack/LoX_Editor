@@ -17,7 +17,7 @@
        is changed.  The search button does a search first/next depending on if the text searching on has
        been searched before or not.  Once the file has been searched, the search will reset back to the top
        if searched one more time.  Suggested strings to look for: "Gold", Gaulen, DevelopmentPoints, your
-       characters names.</p>
+       characters names, experience.</p>
 	<p>Standard mode for the editor is raw XML editing.  The editor also features an 'edit chars' button,
        which will open a dialog that will allow editing of some of the character attributes.  The dialog
        opens with Gaulen, and has 'next' and 'prev' buttons to view/edit the next or previous character.
@@ -32,6 +32,17 @@
        will be lost (game rolls them to zero around 85 or so).  When done editing the characters, select
        the 'save' button.  The XML is rebuilt and displayed with the updated values in the xml text
        box.</p>
+    <p>Item editing is only done in raw XML.  The highest quality is 16.  Can edit all items and change the
+       quality line to:
+       <pre>&lt;Complex name="Quality" type="SOL.ItemQualities.ItemQuality16, SOL" /&gt;</pre>
+       Generally, except for one 'talking' chest, you will only find or be able to but items of
+       quality 15. In additon, there is only one enchantment that can be added to each item.  Suggestion
+       is to copy the complex structure from another item that has the enchantment you want over the
+       enchantment (or lack of) structure of the item adding to.  King enchantment gives pluses to all
+       attributes.</p>
+    <p>Items are added to the bottom of the list of items in the party pack.  To easily find the last
+       item(s) collected, search for "Gold", then scroll up to review the last items collected (as
+       long as they didn't stack over existing items you have).
     <div style="font-weight:bold;">Game Options:</div>
     <p>There are no real options to set or configure for the LoX editor.  The program does save off
 	   the main window position and size when exiting the program and saves the directory last loaded
