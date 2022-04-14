@@ -1,4 +1,7 @@
 ﻿using System;
+using System.IO;
+using System.Text;
+using System.Xml;
 
 /*
  * Class used to read the XML and create the character records to edit via a dialog
@@ -10,7 +13,8 @@
  * 
  * ----------------------------------------------------------------------------
  * 
- * Updated: yyyy-mm-dd - xxxx.
+ * Updated: 2022-04-13 - Added a static validate XML syntax method to use to
+ *                       make sure the XML is well-formed before saving.
  * 
  */
 namespace LoX_Editor
@@ -365,6 +369,38 @@ namespace LoX_Editor
                 }
                 _saveGameXML = ConvertToText(xmlLines);
             }
+        }
+
+        public static string ValidateXMLSyntax(string gameXML)
+        {
+            string retMsg = "";
+
+            // Based on code found on Stack Overflow
+            //  from: https://stackoverflow.com/questions/8143732/stringstream-in-c-sharp
+            //  - NH. Aug 18, 2017 at 15:19
+            try
+            {
+                using (MemoryStream stream = new MemoryStream(Encoding.UTF8.GetBytes(gameXML)))
+                {
+                    var settings = new XmlReaderSettings
+                    {
+                        DtdProcessing = DtdProcessing.Ignore,
+                        XmlResolver = null
+                    };
+
+                    using (var reader = XmlReader.Create(new StreamReader(stream), settings))
+                    {
+                        var document = new XmlDocument();
+                        document.Load(reader);
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                retMsg = exc.Message;
+            }
+
+            return retMsg;
         }
         #endregion
     }

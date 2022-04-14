@@ -27,6 +27,8 @@ using Microsoft.Win32;
  *          2022-03-31 - Added simple character edit dialog to view/edit
  *                       the saved characters through instead of via the raw
  *                       XML.
+ *          2022-04-13 - Added a validate XML syntax routine to make sure the
+ *                       XML is well formed before saving back to game file.
  * 
  */
 namespace LoX_Editor
@@ -256,7 +258,9 @@ namespace LoX_Editor
 
         private void SaveSaveFile()
         {
-            if (UpdateAndSaveInfo())
+            string errMsg = ProcessXML.ValidateXMLSyntax(tbGameXML.Text);
+
+            if ("".Equals(errMsg) && UpdateAndSaveInfo())
             {
                 if (SaveEditedText())
                 {
@@ -271,6 +275,11 @@ namespace LoX_Editor
                         }
                     }
                 }
+            }
+            else if (!"".Equals(errMsg))
+            {
+                MessageBox.Show(this, "Cannot save, XML Error: "+ errMsg, this.Text,
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         #endregion

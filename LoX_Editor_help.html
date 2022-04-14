@@ -32,6 +32,12 @@
        will be lost (game rolls them to zero around 85 or so).  When done editing the characters, select
        the 'save' button.  The XML is rebuilt and displayed with the updated values in the xml text
        box.</p>
+    <p>During the save, the XML is checked to make sure it is still well-formed (valid XML syntax) to
+       catch 'fat finger' mistakes.  This should catch mistakes in the XML, since editing it raw, that
+       were un-intended.  For example, removing a &quot; or an XML tag that is needed.  This will not
+       check validity of the XML schema.  This line number in the error message is pretty close, though
+       usually indicates the line following the line with the error (it shows where the syntax mistake
+       was detected).
     <p>Item editing is only done in raw XML.  The highest quality is 16.  Can edit all items and change the
        quality line to:
        <pre>&lt;Complex name="Quality" type="SOL.ItemQualities.ItemQuality16, SOL" /&gt;</pre>
