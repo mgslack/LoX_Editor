@@ -18,17 +18,17 @@
        been searched before or not.  Once the file has been searched, the search will reset back to the top
        if searched one more time.  Suggested strings to look for: "Gold", Gaulen, DevelopmentPoints, your
        characters names, experience.</p>
-	<p>Standard mode for the editor is raw XML editing.  The editor also features an 'edit chars' button,
+    <p>Standard mode for the editor is raw XML editing.  The editor also features an 'edit chars' button,
        which will open a dialog that will allow editing of some of the character attributes.  The dialog
        opens with Gaulen, and has 'next' and 'prev' buttons to view/edit the next or previous character.
        The dialog allows one to edit the character name (except for Gaulen), the resistances, attributes,
        HP and MP bonuses, number of times killed, experience and development points.  There are maximum
        values, but are set way high for each field.  Most of these fields can be increased in game by
        various actions and so you'll need to make sure there is the ability to grow naturally versus
-       setting values to the uppper maximum.  Generally, you'll not want to edit resistances higher
+       setting values to the upper maximums.  Generally, you'll not want to edit resistances higher
        than 60, attributes around 60 also.  HP and MP bonus should be left under 500, times killed, under
        100.  Experience is given so you can balance your characters, but should not really be pushed
-       above 100000 with the editor.  Development points are capped in the game and anything over 75
+       above 100000 with the editor.  Development points are capped in the game and anything over 85
        will be lost (game rolls them to zero around 85 or so).  When done editing the characters, select
        the 'save' button.  The XML is rebuilt and displayed with the updated values in the xml text
        box.</p>
@@ -41,17 +41,17 @@
     <p>Item editing is only done in raw XML.  The highest quality is 16.  Can edit all items and change the
        quality line to:
        <pre>&lt;Complex name="Quality" type="SOL.ItemQualities.ItemQuality16, SOL" /&gt;</pre>
-       Generally, except for one 'talking' chest, you will only find or be able to but items of
-       quality 15. In additon, there is only one enchantment that can be added to each item.  Suggestion
-       is to copy the complex structure from another item that has the enchantment you want over the
-       enchantment (or lack of) structure of the item adding to.  King enchantment gives pluses to all
-       attributes.</p>
+       Generally, except for one 'talking' chest, and a few other end game spots, you will only find, or be
+       able to buy, items of quality 15. In additon, there is only one enchantment that can be added to
+       each item.  Suggestion is to copy the complex structure from another item that has the enchantment
+       you want over the enchantment (or lack of) structure of the item adding to.  King enchantment gives
+       pluses to all attributes.</p>
     <p>Items are added to the bottom of the list of items in the party pack.  To easily find the last
        item(s) collected, search for "Gold", then scroll up to review the last items collected (as
        long as they didn't stack over existing items you have).
     <div style="font-weight:bold;">Game Options:</div>
     <p>There are no real options to set or configure for the LoX editor.  The program does save off
-	   the main window position and size when exiting the program and saves the directory last loaded
+       the main window position and size when exiting the program and saves the directory last loaded
        a LoX save game from.</p>
     <p>For more information about Lords of Xulima, see
        <a href="http://www.numantiangames.com/lordsofxulima/">Numantian Games LoX Home Page</a>.</p>
